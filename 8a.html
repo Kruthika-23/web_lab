@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Split String into Array</title>
+    <script>
+        // JavaScript code
+        function splitStringToArray() {
+            var inputString = prompt("Enter a string:");
+
+            if (!inputString) {
+                alert("No string entered. Please enter a valid string.");
+                return;
+            }
+
+            var words = inputString.split(' ');
+
+            alert("Array of words: " + words);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="splitStringToArray()">Split String</button>
+</body>
+</html>
