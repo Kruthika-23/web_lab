@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function validateUSN() {
+        const usnInput = document.getElementById('usnInput');
+        const usn = usnInput.value;
+      
+        // Regular expression pattern to validate VTU USN
+        const usnPattern = /^1[V-v][S-s]\d{2}[A-Za-z]{2}\d{3}$/;
+      
+        if (usnPattern.test(usn)) {
+          alert('Valid USN');
+        } else {
+          alert('Invalid USN');
+        }
+      }
+</script>
+<body>
+    <input type="text" id="usnInput" placeholder="Enter VTU USN">
+  <button onclick="validateUSN()">Validate</button>
+
+</body>
+</html>
