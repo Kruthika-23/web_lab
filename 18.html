@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+    <script>
+        // JavaScript code
+        function validateEmail() {
+          const email = prompt('Enter email address:');
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (emailRegex.test(email)) {
+            alert('Valid email address');
+          } else {
+            alert('Invalid email address');
+          }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="validateEmail()">Validate Email</button>
+</body>
+</html>
