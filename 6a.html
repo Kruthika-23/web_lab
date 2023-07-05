@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capitalizing First Letters</title>
+    <script>
+        // JavaScript code
+        function capitalizeFirstLetters() {
+            var inputString = prompt("Enter a string:");
+
+            if (!inputString) {
+                alert("No string entered. Please enter a valid string.");
+                return;
+            }
+
+            var words = inputString.split(' ');
+
+            for (var i = 0; i < words.length; i++) {
+               
+                if (words[i].length > 0) {
+                    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+                }
+            }
+
+            var capitalizedString = words.join(' ');
+
+            alert("Capitalized String: " + capitalizedString);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="capitalizeFirstLetters()">Capitalize First Letters</button>
+</body>
+</html>
