@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jump Search</title>
+    <script>
+        // JavaScript code
+        function jumpSearch() {
+            var key = parseInt(prompt("Enter the key:"));
+            var numbers = prompt("Enter a list of numbers (comma-separated):").split(",").map(Number);
+
+            var blockSize = Math.floor(Math.sqrt(numbers.length));
+            var startIndex = 0;
+            var endIndex = blockSize;
+
+            while (numbers[endIndex] <= key && endIndex < numbers.length) {
+                startIndex = endIndex;
+                endIndex += blockSize;
+                if (endIndex > numbers.length - 1) {
+                    endIndex = numbers.length;
+                }
+            }
+
+            for (var i = startIndex; i < endIndex; i++) {
+                if (numbers[i] === key) {
+                    alert("Key found!");
+                    return;
+                }
+            }
+
+            alert("Key not found.");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="jumpSearch()">Perform Jump Search</button>
+</body>
+</html>
