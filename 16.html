@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weight Conversion</title>
+    <script>
+        // JavaScript code
+        const convertKgToLbs = () => {
+          const weightInKg = prompt('Enter weight in Kg:');
+          const weight = parseFloat(weightInKg);
+
+          if (isNaN(weight)) {
+            alert('Invalid input. Please enter a valid weight in Kg.');
+            return;
+          }
+
+          const lbs = weight * 2.2;
+
+          if (lbs > 150) {
+            alert('Weight category: obese');
+          } else if (lbs >= 100 && lbs <= 150) {
+            alert('Weight category: you are ok');
+          } else {
+            alert('Weight category: underweight');
+          }
+        };
+    </script>
+</head>
+<body>
+    <button onclick="convertKgToLbs()">Convert Kg to Lbs</button>
+</body>
+</html>
