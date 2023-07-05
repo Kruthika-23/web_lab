@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // Initialize an empty array
+var array = [];
+
+// Function to add elements to the array using prompt
+function addElements() {
+  var element = prompt("Enter an element (or type 'done' to finish):");
+
+  // Keep adding elements until the user types 'done'
+  while (element !== "done") {
+    // Convert the input to a number (if desired)
+     var number = Number(element);
+
+    // Add the element to the array
+    array.push(element);
+
+    // Prompt for the next element
+    element = prompt("Enter an element (or type 'done' to finish):");
+  }
+}
+
+// Function to perform binary search on the array
+function binarySearch(arr, target) {
+  var left = 0;
+  var right = arr.length - 1;
+
+  while (left <= right) {
+    var mid = Math.floor((left + right) / 2);
+
+    if (arr[mid] === target) {
+      return mid; // Element found at index mid
+    } else if (arr[mid] < target) {
+      left = mid + 1; // Search in the right half
+    } else {
+      right = mid - 1; // Search in the left half
+    }
+  }
+
+  return -1; // Element not found
+}
+
+// Call the function to add elements to the array
+addElements();
+
+// Prompt the user to enter a target element for binary search
+var target = prompt("Enter the element to search for:");
+
+// Perform binary search on the array
+var index = binarySearch(array, target);
+
+// Display the result
+if (index !== -1) {
+  console.log("Element found at index:", index);
+} else {
+  console.log("Element not found in the array.");
+}
+</script>
+<body>
+    
+</body>
+</html>
