@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    
+// Get the input text box element
+var inputBox = document.getElementById("inputBox");
+
+// Add event listener for the "input" event
+inputBox.addEventListener("input", function() {
+  // Get the input value
+  var inputString = inputBox.value;
+
+  // Remove any non-alphabetic characters from the string
+  var cleanString = inputString.replace(/[^A-Za-z]/g, '');
+
+  // Sort the letters in alphabetical order
+  var sortedString = cleanString.split('').sort().join('');
+
+  // Display the sorted string in the result element
+  var resultElement = document.getElementById("result");
+  resultElement.innerText = sortedString;
+});
+</script>
+<body>
+    <h1>Alphabetical Order</h1>
+    <input type="text" id="inputBox" />
+    <p id="result"></p>
+    <script src="script.js"></script>
+    
+</body>
+</html>
