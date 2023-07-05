@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visitor Counter</title>
+    <script>
+        // JavaScript code
+        function incrementCounter() {
+          if (localStorage.getItem('visitorCount')) {
+            let count = parseInt(localStorage.getItem('visitorCount'));
+            count++;
+            localStorage.setItem('visitorCount', count);
+          } else {
+            localStorage.setItem('visitorCount', 1);
+          }
+          updateCounter();
+        }
+
+        function updateCounter() {
+          const counterElement = document.getElementById('visitorCounter');
+          const count = localStorage.getItem('visitorCount');
+          counterElement.textContent = `Number of visitors: ${count}`;
+        }
+    </script>
+</head>
+<body onload="updateCounter()">
+    <h1>Welcome to My Website</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <button onclick="incrementCounter()">Visit Website</button>
+    <p id="visitorCounter"></p>
+</body>
+</html>
