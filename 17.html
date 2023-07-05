@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virus Detection</title>
+    <script>
+        // JavaScript code
+        function checkInfection() {
+          const virusComposition = prompt('Enter virus composition:');
+          const bloodComposition = prompt('Enter blood composition:');
+
+          let virusIndex = 0;
+          let bloodIndex = 0;
+
+          while (virusIndex < virusComposition.length && bloodIndex < bloodComposition.length) {
+            if (virusComposition[virusIndex] === bloodComposition[bloodIndex]) {
+			bloodIndex++;
+            }
+
+            virusIndex++;
+
+            
+          }
+
+          if (bloodIndex === bloodComposition.length) {
+            alert('POSITIVE');
+          } else {
+            alert('NEGATIVE');
+          }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="checkInfection()">Check Infection</button>
+</body>
+</html>
+
