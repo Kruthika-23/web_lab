@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promise Example</title>
+  <script>
+    function getData() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const success = true;
+          success ? resolve({ message: "Data retrieved successfully" }) : reject({ message: "Error retrieving data" });
+        }, 2000);
+      });
+    }
+
+    function processData(data) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const success = true;
+          success ? resolve({ message: "Data processed successfully" }) : reject({ message: "Error processing data" });
+        }, 2000);
+      });
+    }
+
+    function displayData(result) {
+      console.log("Result:", result.message);
+    }
+
+    function handleError(error) {
+      console.log("Error:", error.message);
+    }
+
+    const handleButtonClick = () => {
+      getData().then(processData).then(displayData).catch(handleError);
+    };
+  </script>
+</head>
+<body>
+  <button onclick="handleButtonClick()">Click Me</button>
+</body>
+</html>
+
